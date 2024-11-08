@@ -1,0 +1,32 @@
+clear
+echo
+echo "********************************* description ********************************************************"
+echo "*                                                                                                    *"
+echo "*                                                                                                    *"
+echo "*                  Retirementhome of the Rocket Trutles, Hamburg 2024                                *"
+echo "*                                                                                                    *"
+echo "*                                                                                                    *"
+echo "************************************* end ************************************************************"
+echo
+echo 
+PS3='Please enter your choice: '
+options=("IP Setup" "Cleanup" "Quit")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "IP Setup")
+            echo "preparing the environment"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.setup/main.yaml
+            break
+            ;;
+        "Cleantup")
+            echo "cleaning up the environment"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/file/hosts /home/cumulus/HH/.cleanup/main.yaml
+            break
+            ;;
+         "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
