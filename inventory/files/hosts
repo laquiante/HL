@@ -9,7 +9,7 @@ cumulus2 ansible_host=192.168.200.4
 [spine]
 cumulus1 ansible_host=192.168.200.3 
 
-[host
+[host]
 ubuntu0 ansible_host=192.168.200.5
 ubuntu1 ansible_host=192.168.200.6
 
