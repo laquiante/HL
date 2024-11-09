@@ -8,25 +8,25 @@
       lo:
         ip:
           address:
-            172.16.100.3/32: {}
+            172.16.100.2/32: {}
         type: loopback
       swp1:
         ip:
           address:
-            10.0.4.2/24: {}
+            10.0.2.1/24: {}
       swp1-2:
         type: swp
       swp2:
         ip:
           address:
-            10.0.3.2/24: {}
+            10.0.3.1/24: {}
     router:
       bgp:
         autonomous-system: 4294967294
         enable: on
-        router-id: 172.16.100.3
+        router-id: 172.16.100.2
     system:
-      hostname: cumulus2
+      hostname: cumulus1
     vrf:
       default:
         router:
@@ -35,11 +35,20 @@
               ipv4-unicast:
                 enable: on
                 network:
+                  10.0.2.0/24: {}
                   10.0.3.0/24: {}
-                  10.0.4.0/24: {}
-                  172.16.100.3/32: {}
+                  172.16.100.2/32: {}
             enable: on
             neighbor:
-              10.0.3.1:
+              10.0.2.2:
+                address-family:
+                  ipv4-unicast:
+                    route-reflector-client: on
+                remote-as: 4294967294
+                type: numbered
+              10.0.3.2:
+                address-family:
+                  ipv4-unicast:
+                    route-reflector-client: on
                 remote-as: 4294967294
                 type: numbered
