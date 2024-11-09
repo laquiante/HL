@@ -7,6 +7,15 @@ echo "*                                                                         
 echo "*                  Retirementhome of the Rocket Trutles, Hamburg 2024                                *"
 echo "*                                                                                                    *"
 echo "*                                                                                                    *"
+echo "*    Der Plan fuer das Wochenende....                                                                *"
+echo "*    .B IP                                                                                           *"
+echo "*    .C BGP RR                                                                                       *"
+echo "*    .D BGP eBGP                                                                                     *"
+echo "*    .E MC                                                                                           *"
+echo "*    .F VxLAN                                                                                        *"
+echo "*    .G EVPN L2                                                                                      *"
+echo "*    .H EVPN L3                                                                                      *"
+echo "*                                                                                                    *"
 echo "************************************* end ************************************************************"
 echo
 echo 
