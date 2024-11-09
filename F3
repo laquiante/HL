@@ -6,7 +6,6 @@ CUMULUS_HOME="/home/cumulus"
 
 sudo ansible-playbook /home/ubuntu/HH/.main.yaml
 
-echo "User ueberpruefen"
 echo "Directory ueberpruefen"
 
 sudo -i -u cumulus bash << EOF
