@@ -17,7 +17,7 @@ do
     case $opt in
         "IP Setup")
             echo "preparing the environment"
-            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.setup/main.yaml
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.B/main.yaml
             break
             ;;
         "Cleanup")
