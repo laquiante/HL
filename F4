@@ -1,0 +1,14 @@
+#! /usr/bin/bash
+# -*- tab-width: 4; c-basic-offset: 4; indent-tabs-mode: nil -*-
+
+# ALQ, Hamburg 2024
+
+#clear
+echo "Netplan"
+sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.netplan/hosts.yaml
+echo "start script: running additional configuration items" 
+if [ -f /home/cumulus/HH/.additional.conf ]; then
+        . /home/cumulus/HH/.additional.conf
+fi
+echo "Die Rocket Turtle fragt: Ist dein Benutzer richtig gewaehlt?"
+exit 0
