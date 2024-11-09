@@ -2,6 +2,11 @@
 
 # 192.168.200.1 oob-mgmt-server
 
+[leafspine]
+cumulus0 ansible_host=192.168.200.2 
+cumulus1 ansible_host=192.168.200.3 
+cumulus2 ansible_host=192.168.200.4 
+
 [leaf]
 cumulus0 ansible_host=192.168.200.2 
 cumulus2 ansible_host=192.168.200.4 
