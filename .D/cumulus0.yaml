@@ -1,0 +1,45 @@
+- header:
+    model: VX
+    nvue-api-version: nvue_v1
+    rev-id: 1.0
+    version: Cumulus Linux 5.6.0
+- set:
+    interface:
+      lo:
+        ip:
+          address:
+            172.16.100.1/32: {}
+        type: loopback
+      swp1:
+        ip:
+          address:
+            10.0.1.2/24: {}
+      swp1-2:
+        type: swp
+      swp2:
+        ip:
+          address:
+            10.0.2.2/24: {}
+    router:
+      bgp:
+        autonomous-system: 4294967294
+        enable: on
+        router-id: 172.16.100.1
+    system:
+      hostname: cumulus0
+    vrf:
+      default:
+        router:
+          bgp:
+            address-family:
+              ipv4-unicast:
+                enable: on
+                network:
+                  10.0.1.0/24: {}
+                  10.0.2.0/24: {}
+                  172.16.100.1/32: {}
+            enable: on
+            neighbor:
+              10.0.2.1:
+                remote-as: 4294966294
+                type: numbered
