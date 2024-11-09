@@ -5,13 +5,13 @@
   gather_facts: false
 
   tasks:
-    - name: add cumulus user
+    - name: add cumulus user, password CumulusLinux!
       ansible.builtin.user: 
         name: cumulus
         group: admin
         shell: /bin/bash
         comment: "admin user"
-        password: "$6$alq$WRoBPYvpxl0kxnfgcCB6SZ1MxRmBV8/aHhwGAOn17fp8pszaAsVzxy7qPUBHX71ovin1epXCbleKgiUcqlrzT2"  
+        password: "$6$alq$WRoBPYvpxl0kxnfgcCB6SZ1MxRmBV8/aHhwGAOn17fp8pszaAsVzxy7qPUBHX71ovin1epXCbleKgiUcqlrzT1"  
         
     - name: Make sudo without password 
       copy:
