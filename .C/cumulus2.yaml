@@ -40,6 +40,6 @@
                   172.16.100.3/32: {}
             enable: on
             neighbor:
-              10.0.4.2:
+              10.0.3.1:
                 remote-as: 4294967294
                 type: numbered
