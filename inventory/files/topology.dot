@@ -1,0 +1,6 @@
+graph "ALQ" {
+"cumulus0":"swp1" -- "ubuntu0":"eth1"
+"cumulus0":"swp2" -- "cumulus1":"swp1"
+"cumulus1":"swp2" -- "cumulus2":"swp2"
+"cumulus2":"swp1" -- "ubuntu1":"eth1"
+}
