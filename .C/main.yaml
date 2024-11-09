@@ -1,16 +1,39 @@
-network:
-  version: 2
-  renderer: networkd
-  ethernets:
-    lo:
-      addresses:
-      - 172.16.100.10/32
-    eth0:
-      dhcp4: true
-    eth1:
-      dhcp4: false
-      addresses:
-      - 10.0.1.1/24
-      routes:
-      - to: 10.0.0.0/16
-        via: 10.0.1.2
+- hosts: host
+  name: netplan
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: cloud file entfernen
+      ansible.builtin.file:
+        path: /etc/netplan/50-cloud-init.yaml
+        state: absent
+    - name: cloud file entfernen
+      ansible.builtin.file:
+        path: /etc/netplan/config.yaml
+        state: absent
+    - name: copy netplan yaml
+      copy:
+        src: /home/cumulus/HH/.C/{{ inventory_hostname }}.yaml
+        dest: /etc/netplan/config.yaml
+    - name: apply netplan yaml
+      shell: netplan apply
+       
+    - name: Check interface 1
+      shell: /sbin/ip -br -4 a | grep 'eth1'
+      ignore_errors: yes
+      register: result
+    - debug: msg={{ result.stdout }}
+
+- hosts: leafspine
+  name: startup
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: copy startup.yaml
+      copy:
+        src: /home/cumulus/HH/.C/{{ inventory_hostname }}
+        dest: /etc/nvue.d/startup.yaml
+    # aktivieren
+    - name: activate changes for leaf
+      shell:  nv config apply startup -y
+      
