@@ -10,5 +10,5 @@ echo "start script: running additional configuration items"
 if [ -f /home/cumulus/HH/.additional.conf ]; then
         . /home/cumulus/HH/.additional.conf
 fi
-echo "Die Rocket Turtle fragt: Ist dein Benutzer richtig gewaehlt?"
+echo "Fertig"
 exit 0
