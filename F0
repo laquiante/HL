@@ -20,13 +20,18 @@ echo "************************************* end ********************************
 echo
 echo 
 PS3='Please enter your choice: '
-options=("IP Setup" "Cleanup" "Quit")
+options=("IP Setup" "iBGP" "Cleanup" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
         "IP Setup")
-            echo "preparing the environment"
+            echo "Adressen werden gesetzt"
             sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.B/main.yaml
+            break
+            ;;
+        "iBGP")
+            echo "iBGP"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.C/main.yaml
             break
             ;;
         "Cleanup")
