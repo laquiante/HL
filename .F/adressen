@@ -14,3 +14,15 @@ cumulus@leaf01:~$ nv config apply
 ubuntu0  eth1  48:b0:2d:eb:e4:eb  10.0.1.1
 ubuntu1  eth1  48:b0:2d:1b:a7:ae  10.0.4.1
 beide Host im Spiel .F mit einer 16er Maske
+
+cumulus@cumulus2:mgmt:~$ bridge fdb
+48:b0:2d:1b:a7:ae dev swp1 vlan 300 master br_default 
+48:b0:2d:6e:cf:4b dev swp1 master br_default permanent
+48:b0:2d:eb:e4:eb dev vxlan48 vlan 300 master br_default 
+26:d2:68:eb:1c:41 dev vxlan48 vlan 1 master br_default permanent
+26:d2:68:eb:1c:41 dev vxlan48 master br_default permanent
+00:00:00:00:00:00 dev vxlan48 dst 172.16.100.1 src_vni 3000 self permanent
+48:b0:2d:eb:e4:eb dev vxlan48 dst 172.16.100.1 src_vni 3000 self 
+48:b0:2d:21:35:69 dev br_default vlan 1 master br_default permanent
+48:b0:2d:21:35:69 dev br_default master br_default permanent
+
