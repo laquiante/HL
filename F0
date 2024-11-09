@@ -12,7 +12,7 @@ echo "*    .B IP            09.11.2024                                          
 echo "*    .C BGP (RR)      09.11.2024                                                                     *"
 echo "*    .D BGP eBGP      09.11.2024                                                                     *"
 echo "*    .E MC                                                                                           *"
-echo "*    .F VxLAN                                                                                        *"
+echo "*    .F VxLAN         09.11.2024                                                                     *"
 echo "*    .G EVPN L2                                                                                      *"
 echo "*    .H EVPN L3                                                                                      *"
 echo "*                                                                                                    *"
