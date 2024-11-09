@@ -10,7 +10,7 @@ echo "*                                                                         
 echo "*    Der Plan fuer das Wochenende....                                                                *"
 echo "*    .B IP            09.11.2024                                                                     *"
 echo "*    .C BGP (RR)      09.11.2024                                                                     *"
-echo "*    .D BGP eBGP                                                                                     *"
+echo "*    .D BGP eBGP      09.11.2024                                                                              *"
 echo "*    .E MC                                                                                           *"
 echo "*    .F VxLAN                                                                                        *"
 echo "*    .G EVPN L2                                                                                      *"
