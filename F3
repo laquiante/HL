@@ -13,13 +13,15 @@ sudo -i -u cumulus bash << EOF
   echo "DIR :$PWD"
   if [ ! -d "$CUMULUS_HOME/HH" ]; then
     git clone https://github.com/laquiante/HH
-    echo "git clone done"
+    echo "git clone erfolgt"
   fi
+
+
   if [ -d "$CUMULUS_HOME/HH" ]; then
     cd $CUMULUS_HOME/HH
     sudo chmod 744 $CUMULUS_HOME/HH/F4
     export PATH="$CUMULUS_HOME/HH/:$PATH" 
-    echo "calling /home/cumulus/HH/start.sh"
+    echo "calling /home/cumulus/HH/F4"
     sudo bash "$CUMULUS_HOME/HH/F4"
   fi
 
