@@ -1,3 +1,2 @@
-#!/usr/bin/bash
 PATH=$PATH:/home/cumulus/HH
 chmod +x /home/cumulus/HH/F0
