@@ -19,7 +19,7 @@
   tasks:
     - name: copy netplan yaml
       copy:
-        src: /home/cumulus/.G{{ inventory_hostname }}.yaml
+        src: /home/cumulus/HH/.G/{{ inventory_hostname }}.yaml
         dest: /etc/netplan/config.yaml
     - name: apply netplan
       shell: netplan apply
