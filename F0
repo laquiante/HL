@@ -7,20 +7,19 @@ echo "*                                                                         
 echo "*                  Retirementhome of the Rocket Trutles, Hamburg 2024                                *"
 echo "*                                                                                                    *"
 echo "*                                                                                                    *"
-echo "*    Der Plan fuer das Wochenende....                                                                *"
+echo "*    Der Plan fuer das Wochenende....und die Woche zum Testen...                                     *"
 echo "*    .B IP            09.11.2024                                                                     *"
 echo "*    .C BGP (RR)      09.11.2024                                                                     *"
 echo "*    .D BGP eBGP      09.11.2024                                                                     *"
 echo "*    .E MC                                                                                           *"
 echo "*    .F VxLAN         09.11.2024                                                                     *"
-echo "*    .G EVPN L2                                                                                      *"
-echo "*    .H EVPN L3                                                                                      *"
+echo "*    .G EVPN L2       10.11.2024                                                                     *"
 echo "*                                                                                                    *"
 echo "************************************* end ************************************************************"
 echo
 echo 
 PS3='Please enter your choice: '
-options=("IP Setup" "iBGP" "Cleanup" "Quit")
+options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "Cleanup" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -32,6 +31,21 @@ do
         "iBGP")
             echo "iBGP"
             sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.C/main.yaml
+            break
+            ;;
+        "eBGP")
+            echo "eBGP"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.D/main.yaml
+            break
+            ;;
+        "VxLAN")
+            echo "Statischer Tunnel"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.F/main.yaml
+            break
+            ;;
+        "EVPN L2")
+            echo "EVPN L2"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.G/main.yaml
             break
             ;;
         "Cleanup")
