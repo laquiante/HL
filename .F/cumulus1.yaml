@@ -22,7 +22,7 @@
             10.0.3.1/24: {}
     router:
       bgp:
-        autonomous-system: 4294966294
+        autonomous-system: 4294967294
         enable: on
         router-id: 172.16.100.2
     system:
