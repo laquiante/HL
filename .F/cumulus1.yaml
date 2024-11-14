@@ -43,12 +43,12 @@
               10.0.2.2:
                 address-family:
                   ipv4-unicast:
-                    route-reflector-client: off
+                    route-reflector-client: on
                 remote-as: 4294967294
                 type: numbered
               10.0.3.2:
                 address-family:
                   ipv4-unicast:
-                    route-reflector-client: off
+                    route-reflector-client: on
                 remote-as: 4294967294
                 type: numbered
