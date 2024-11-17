@@ -21,7 +21,7 @@ echo "*                                                                         
 echo "************************************* end ************************************************************"
 echo
 echo 
-PS3='Please enter your choice: '
+PS3='Auswahl: '
 options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "Cleanup" "Quit")
 select opt in "${options[@]}"
 do
@@ -52,7 +52,7 @@ do
             break
             ;;
         "Cleanup")
-            echo "cleaning up the environment"
+            echo "Saubermachen"
             sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.cleanup/main.yaml
             break
             ;;
