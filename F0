@@ -16,7 +16,11 @@ echo "*    .F VxLAN         09.11.2024     ok                                   
 echo "*    .G EVPN L2       10.11.2024     ok                                                              *"
 echo "*                                                                                                    *"
 echo "*    .H FHRP          17.11.2024                                                                     *"
-echo "*    .I LAG + LACP    17.11.2024                                                                                                *"
+echo "*    .I LAG + LACP    17.11.2024                                                                     *"
+echo "*                                                                                                    *"
+echo "*    .J Jenkins       24.11.2024                                                                                                *"
+echo "*                                                                                                    *"
+echo "*                                                                                                    *"
 echo "*                                                                                                    *"
 echo "************************************* end ************************************************************"
 echo
