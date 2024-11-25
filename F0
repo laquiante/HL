@@ -27,7 +27,7 @@ echo "************************************* end ********************************
 echo
 echo 
 PS3='Auswahl: '
-options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "Cleanup" "Quit")
+options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "LAG LACP" "Cleanup" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -54,6 +54,11 @@ do
         "EVPN L2")
             echo "EVPN L2"
             sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.G/main.yaml
+            break
+            ;;
+        "LAG LACP")
+            echo "EtherChannel"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.I/main.yaml
             break
             ;;
         "Cleanup")
