@@ -14,18 +14,35 @@
     evpn:
       enable: on
     interface:
+      bond13:
+        bond:
+          member:
+            swp1: {}
+            swp3: {}
+        bridge:
+          domain:
+            br_default:
+              access: 300
+              vlan: {}
+        type: bond
       lo:
         ip:
           address:
             172.16.100.1/32: {}
         type: loopback
-      swp1:
-        bridge:
-          domain:
-            br_default:
-              access: 300
-      swp1-2:
+      swp2:
         type: swp
+      vlan300:
+        ip:
+          address:
+            10.0.78.15/16: {}
+          vrr:
+            address:
+              10.0.78.17/16: {}
+            enable: on
+            mac-address: 00:00:0c:00:00:01
+        type: svi
+        vlan: 300
     nve:
       vxlan:
         enable: on
@@ -36,6 +53,8 @@
         autonomous-system: 4294967294
         enable: on
         router-id: 172.16.100.1
+      vrr:
+        enable: on
     system:
       hostname: cumulus0
     vrf:
