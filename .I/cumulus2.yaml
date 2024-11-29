@@ -26,6 +26,17 @@
               access: 300
       swp1-2:
         type: swp
+      vlan300:
+        ip:
+          address:
+            10.0.78.16/16: {}
+          vrr:
+            address:
+              10.0.78.17/16: {}
+            enable: on
+            mac-address: 00:00:0c:00:00:01
+        type: svi
+        vlan: 300
     nve:
       vxlan:
         enable: on
@@ -36,6 +47,8 @@
         autonomous-system: 4294965294
         enable: on
         router-id: 172.16.100.3
+      vrr:
+        enable: on
     system:
       hostname: cumulus2
     vrf:
