@@ -15,7 +15,7 @@ echo "*    .E MC                                                                
 echo "*    .F VxLAN         09.11.2024     ok                                                              *"
 echo "*    .G EVPN L2       10.11.2024     ok                                                              *"
 echo "*                                                                                                    *"
-echo "*    .H FHRP          17.11.2024                                                                     *"
+echo "*    .H FHRP          17.11.2024     06.12.2024 mit .I                                                                     *"
 echo "*    .I LAG + LACP    17.11.2024                                                                     *"
 echo "*                                                                                                    *"
 echo "*    .J Jenkins       24.11.2024                                                                     *"
@@ -27,7 +27,7 @@ echo "************************************* end ********************************
 echo
 echo 
 PS3='Auswahl: '
-options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "LAG LACP" "Cleanup" "Quit")
+options=("IP Setup" "iBGP" "eBGP" "VxLAN" "EVPN L2" "LAG LACP" "Anycast GW" "Cleanup" "Quit")
 select opt in "${options[@]}"
 do
     case $opt in
@@ -59,6 +59,11 @@ do
         "LAG LACP")
             echo "EtherChannel"
             sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.I/main.yaml
+            break
+            ;;
+        "Anycast GW")
+            echo "FHRP"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.H/main.yaml
             break
             ;;
         "Cleanup")
