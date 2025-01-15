@@ -33,6 +33,7 @@ do
             ;;
         "X")
             echo "Auswahl X"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.L/main.yaml
             break
             ;;
         "Y")
