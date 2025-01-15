@@ -1,21 +1,19 @@
 #! /usr/bin/bash
 clear
 echo
-echo "********************************* description ***************************"
-echo "*                                                                       *"
-echo "*                                                                       *"
-echo "*                  Demo, Hamburg 2025                                   *"
-echo "*                                                                       *"
-echo "*                                                                       *"
-echo "*                                                                       *"
-echo "*    Service-Katalog                                                    *"
-echo "*                                                                       *"
-echo "*    A  Hausputz                                                        *"
-echo "*    B  EVPN-L2  MVP                                                    *"
-echo "*    X  EVPN-L3                                                         *"
-echo "*    Y  EVPN-MH                                                         *"
-echo "*                                                                       *"
-echo "************************************* end *******************************"
+echo "****************** description ***************************"
+echo "*                                                        *"
+echo "*    Demo, Hamburg 2025                                  *"
+echo "*                                                        *"
+echo "*                                                        *"
+echo "*    Service-Katalog                                     *"
+echo "*                                                        *"
+echo "*    A  Hausputz                                         *"
+echo "*    B  EVPN-L2  MVP                                     *"
+echo "*    X  EVPN-L3                                          *"
+echo "*    Y  EVPN-MH                                          *"
+echo "*                                                        *"
+echo "********************** end *******************************"
 echo
 echo 
 PS3='Auswahl: '
