@@ -1,0 +1,49 @@
+#! /usr/bin/bash
+clear
+echo
+echo "********************************* description ***************************"
+echo "*                                                                       *"
+echo "*                                                                       *"
+echo "*                  Demo, Hamburg 2025                                   *"
+echo "*                                                                       *"
+echo "*                                                                       *"
+echo "*                                                                       *"
+echo "*    Service-Katalog                                                    *"
+echo "*                                                                       *"
+echo "*    A  Hausputz                                                        *"
+echo "*    B  EVPN-L2  MVP                                                    *"
+echo "*    X  EVPN-L3                                                         *"
+echo "*    Y  EVPN-MH                                                         *"
+echo "*                                                                       *"
+echo "************************************* end *******************************"
+echo
+echo 
+PS3='Auswahl: '
+options=("A" "B" "X" "Y" "Ende")
+select opt in "${options[@]}"
+do
+    case $opt in
+        "A")
+            echo "Auswahl A"
+            ssudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.cleanup/main.yaml
+            break
+            ;;
+        "B")
+            echo "Auswahl B"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.G/main.yaml
+            break
+            ;;
+        "X")
+            echo "Auswahl X"
+            break
+            ;;
+        "Y")
+            echo "Auswahl Y"
+            break
+            ;;
+         "Quit")
+            break
+            ;;
+        *) echo "invalid option $REPLY";;
+    esac
+done
