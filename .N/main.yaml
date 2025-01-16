@@ -1,0 +1,8 @@
+---
+hosts: cumulus1
+vars_files:
+  - /home/cumulus/HH/.N/host_vars/cumulus1.yaml
+
+tasks:
+  - name: j2 demo
+    template: src=test.js dest=/etc/nvue.d/startup.yaml
