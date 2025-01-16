@@ -8,9 +8,9 @@
       domain:
         br_default:
           vlan:
-            '300':
+            '301':
               vni:
-                '3000': {}
+                '301': {}
     evpn:
       enable: on
     interface:
@@ -23,9 +23,16 @@
         bridge:
           domain:
             br_default:
-              access: 300
+              access: 301
       swp1-2:
         type: swp
+      vlan301:
+        ip:
+          address:
+            10.0.4.2/24: {}
+          vrf: BNS
+        type: svi
+        vlan: 301
     nve:
       vxlan:
         enable: on
@@ -33,12 +40,17 @@
           address: 172.16.100.3
     router:
       bgp:
-        autonomous-system: 4294965294
+        autonomous-system: 12
         enable: on
         router-id: 172.16.100.3
     system:
       hostname: cumulus2
     vrf:
+      BNS:
+        evpn:
+          enable: on
+          vni:
+            '10001': {}
       default:
         router:
           bgp:
