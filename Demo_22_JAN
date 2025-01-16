@@ -1,12 +1,10 @@
 #! /usr/bin/bash
 clear
 echo
-echo "****************** description ***************************"
+echo "****************** Service Katalog ***********************"
 echo "*                                                        *"
 echo "*    Demo, Hamburg 2025                                  *"
 echo "*                                                        *"
-echo "*                                                        *"
-echo "*    Service-Katalog                                     *"
 echo "*                                                        *"
 echo "*    A  Hausputz                                         *"
 echo "*    B  EVPN-L2  MVP OK                                  *"
