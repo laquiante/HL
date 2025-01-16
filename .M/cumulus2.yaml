@@ -1,0 +1,71 @@
+- header:
+    model: VX
+    nvue-api-version: nvue_v1
+    rev-id: 1.0
+    version: Cumulus Linux 5.6.0
+- set:
+    bridge:
+      domain:
+        br_default:
+          vlan:
+            '301':
+              vni:
+                '301': {}
+    evpn:
+      enable: on
+    interface:
+      lo:
+        ip:
+          address:
+            172.16.100.3/32: {}
+        type: loopback
+      swp1:
+        bridge:
+          domain:
+            br_default:
+              access: 301
+      swp1-2:
+        type: swp
+      vlan301:
+        ip:
+          address:
+            10.0.4.2/24: {}
+          vrf: BNS
+        type: svi
+        vlan: 301
+    nve:
+      vxlan:
+        enable: on
+        source:
+          address: 172.16.100.3
+    router:
+      bgp:
+        autonomous-system: 12
+        enable: on
+        router-id: 172.16.100.3
+    system:
+      hostname: cumulus2
+    vrf:
+      BNS:
+        evpn:
+          enable: on
+          vni:
+            '10001': {}
+      default:
+        router:
+          bgp:
+            address-family:
+              ipv4-unicast:
+                enable: on
+                network:
+                  172.16.100.3/32: {}
+              l2vpn-evpn:
+                enable: on
+            enable: on
+            neighbor:
+              swp2:
+                address-family:
+                  l2vpn-evpn:
+                    enable: on
+                remote-as: external
+                type: unnumbered
