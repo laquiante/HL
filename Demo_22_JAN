@@ -36,7 +36,7 @@ do
             ;;
         "Y")
             echo "Auswahl Y"
-            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.M/main.yaml
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.N/main.yaml
             break
             ;;
          "Ende")
