@@ -21,7 +21,7 @@ do
     case $opt in
         "A")
             echo "Auswahl A"
-            ssudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.cleanup/main.yaml
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.cleanup/main.yaml
             break
             ;;
         "B")
