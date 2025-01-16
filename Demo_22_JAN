@@ -9,7 +9,7 @@ echo "*                                                        *"
 echo "*    A  Hausputz                                         *"
 echo "*    B  EVPN-L2  MVP OK                                  *"
 echo "*    X  EVPN-L3  MVP OK                                  *"
-echo "*    Y  EVPN-MH                                          *"
+echo "*    Y  J2                                               *"
 echo "*                                                        *"
 echo "********************** end *******************************"
 echo
@@ -36,6 +36,7 @@ do
             ;;
         "Y")
             echo "Auswahl Y"
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.M/main.yaml
             break
             ;;
          "Ende")
