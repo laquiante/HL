@@ -14,7 +14,7 @@
         type: swp
     router:
       bgp:
-        autonomous-system: 4294966294
+        autonomous-system: 11
         enable: on
         router-id: 172.16.100.2
     system:
