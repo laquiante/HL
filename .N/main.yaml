@@ -5,4 +5,4 @@ vars_files:
 
 tasks:
   - name: j2 demo
-    template: src=test.js dest=/etc/nvue.d/startup.yaml
+    template: src=/home/cumulus/HH/.N/test.js dest=/etc/nvue.d/startup.yaml
