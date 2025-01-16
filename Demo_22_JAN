@@ -40,7 +40,7 @@ do
             echo "Auswahl Y"
             break
             ;;
-         "Quit")
+         "Ende")
             break
             ;;
         *) echo "invalid option $REPLY";;
