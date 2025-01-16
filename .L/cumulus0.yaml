@@ -10,7 +10,7 @@
           vlan:
             '300':
               vni:
-                '3000': {}
+                '300': {}
     evpn:
       enable: on
     interface:
@@ -26,6 +26,13 @@
               access: 300
       swp1-2:
         type: swp
+      vlan300:
+        ip:
+          address:
+            10.0.1.2/24: {}
+          vrf: BNS
+        type: svi
+        vlan: 300
     nve:
       vxlan:
         enable: on
@@ -33,12 +40,17 @@
           address: 172.16.100.1
     router:
       bgp:
-        autonomous-system: 4294967294
+        autonomous-system: 10
         enable: on
         router-id: 172.16.100.1
     system:
       hostname: cumulus0
     vrf:
+      BNS:
+        evpn:
+          enable: on
+          vni:
+            '10001': {}
       default:
         router:
           bgp:
