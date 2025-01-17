@@ -25,7 +25,7 @@ do
             ;;
         "B")
             echo "Auswahl IPv6 MVP"
-            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HL/.A/main.yaml
+            sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HL/.B/main.yaml
             break
             ;;
          "Ende")
