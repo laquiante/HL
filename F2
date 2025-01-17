@@ -1,5 +1,5 @@
 -
-  hosts: ubuntu0 ubuntu1
+  hosts: Hans Hamburg
   become: true
   user: ubuntu
   gather_facts: false
