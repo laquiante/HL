@@ -1,3 +1,5 @@
 ---
 
 loopback: 172.168.200.222/32
+
+vrf-spine: ALQ
