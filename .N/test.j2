@@ -22,9 +22,9 @@
     system:
       hostname: cumulus1
     vrf:
-    {% if vrf_spine is defined %}
-   {{ vrf_spine }}:
-    {% endif %}
+   # {% if vrf_spine is defined %}
+   #{{ vrf_spine }}:
+   # {% endif %}
       default:
         router:
           bgp:
