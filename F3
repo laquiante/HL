@@ -1,28 +1,28 @@
 #! /usr/bin/bash
 
-# ALQ, 汉堡 二零二四 年
+# ALQ, 汉堡 二零二五 年
 
 CUMULUS_HOME="/home/cumulus"
 
-sudo ansible-playbook /home/ubuntu/HH/.main.yaml
+sudo ansible-playbook /home/ubuntu/HL/.main.yaml
 
 echo "Directory ueberpruefen"
 
 sudo -i -u cumulus bash << EOF
   cd "$CUMULUS_HOME"
   echo "DIR :$PWD"
-  if [ ! -d "$CUMULUS_HOME/HH" ]; then
-    git clone https://github.com/laquiante/HH
+  if [ ! -d "$CUMULUS_HOME/HL" ]; then
+    git clone https://github.com/laquiante/HL
     echo "git clone erfolgt"
   fi
 
 
-  if [ -d "$CUMULUS_HOME/HH" ]; then
-    cd $CUMULUS_HOME/HH
-    sudo chmod 744 $CUMULUS_HOME/HH/F4
-    export PATH="$CUMULUS_HOME/HH/:$PATH" 
-    echo "calling /home/cumulus/HH/F4"
-    sudo bash "$CUMULUS_HOME/HH/F4"
+  if [ -d "$CUMULUS_HOME/HL" ]; then
+    cd $CUMULUS_HOME/HL
+    sudo chmod 744 $CUMULUS_HOME/HL/F4
+    export PATH="$CUMULUS_HOME/HL/:$PATH" 
+    echo "calling /home/cumulus/HL/F4"
+    sudo bash "$CUMULUS_HOME/HL/F4"
   fi
 
 EOF
