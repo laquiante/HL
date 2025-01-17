@@ -13,7 +13,7 @@
         state: absent
     - name: copy netplan yaml
       copy:
-        src: /home/cumulus/HH/.B/{{ inventory_hostname }}.yaml
+        src: /home/cumulus/HL/.B/{{ inventory_hostname }}.yaml
         dest: /etc/netplan/config.yaml
     - name: apply netplan yaml
       shell: netplan apply
@@ -24,14 +24,14 @@
       register: result
     - debug: msg={{ result.stdout }}
 
-- hosts: leafspine
+- hosts: router
   name: startup
   become: yes
   gather_facts: no
   tasks:
     - name: copy startup.yaml
       copy:
-        src: /home/cumulus/HH/.B/{{ inventory_hostname }}.yaml
+        src: /home/cumulus/HL/.B/{{ inventory_hostname }}.yaml
         dest: /etc/nvue.d/startup.yaml
     # aktivieren
     - name: activate changes for leaf
@@ -39,14 +39,14 @@
       
 # optional lab task      
       
-- hosts: leafspine
+- hosts: router
   name: configuring of PTM
   become: yes
   gather_facts: no
   tasks:
     - name: PTM
       copy:
-        src: /home/cumulus/HH/inventory/files/topology.dot
+        src: /home/cumulus/HL/inventory/files/topology.dot
         dest: /etc/ptm.d/topology.dot
         mode: '0644'
         owner: 'root'
