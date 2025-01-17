@@ -9,6 +9,16 @@ KGW01 ansible_host=192.168.200.5
 SVC01 ansible_host=192.168.200.6
 BGW01 ansible_host=192.168.200.7
 
+[host]
+Hans ansible_host=192.168.200.2
+Hamburg ansible_host=192.168.200.3
+
+[router]
+IGW01 ansible_host=192.168.200.4
+KGW01 ansible_host=192.168.200.5
+SVC01 ansible_host=192.168.200.6
+BGW01 ansible_host=192.168.200.7
+
 [all:vars]
 ansible_user=cumulus
 ansible_become_pass=Academy123
