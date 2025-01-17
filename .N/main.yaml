@@ -4,6 +4,14 @@
   vars_files:
     - /home/cumulus/HH/.N/host_vars/cumulus1.yaml
 
+  vars_prompt:
+    - name: vrf_spine
+      prompt: Bitte gib einen VRF-Namen ein
+      private: false
+
   tasks:
     - name: j2 demo
       template: src=/home/cumulus/HH/.N/test.j2 dest=/etc/nvue.d/startup.yaml
+
+    - name: Aktivieren
+      shell: nv config apply startup -y
