@@ -23,7 +23,7 @@
       hostname: cumulus1
     vrf:
 {% if vrf_spine is defined %}
-      {{ vrf_spine }}:
+      {{ vrf_spine }}: {}
 {% endif %}
       default:
         router:
