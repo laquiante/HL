@@ -10,15 +10,5 @@
           address:
             172.16.100.2/32: {}
         type: loopback
-      swp1:
-        ip:
-          address:
-            10.0.2.1/24: {}
-      swp1-2:
-        type: swp
-      swp2:
-        ip:
-          address:
-            10.0.3.1/24: {}
     system:
-      hostname: cumulus1
+      hostname: KGW01
