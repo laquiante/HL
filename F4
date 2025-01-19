@@ -5,10 +5,10 @@
 
 #clear
 echo "Netplan"
-sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HH/.netplan/hosts.yaml
+sudo ansible-playbook -i /home/cumulus/HH/inventory/files/hosts /home/cumulus/HL/.netplan/hosts.yaml
 echo "start script: running additional configuration items" 
-if [ -f /home/cumulus/HH/.additional.conf ]; then
-        . /home/cumulus/HH/.additional.conf
+if [ -f /home/cumulus/HL/.additional.conf ]; then
+        . /home/cumulus/HL/.additional.conf
 fi
 echo "Fertig"
 exit 0
