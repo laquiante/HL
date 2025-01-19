@@ -10,15 +10,5 @@
           address:
             172.16.100.3/32: {}
         type: loopback
-      swp1:
-        ip:
-          address:
-            10.0.4.2/24: {}
-      swp1-2:
-        type: swp
-      swp2:
-        ip:
-          address:
-            10.0.3.2/24: {}
     system:
-      hostname: cumulus2
+      hostname: SVC01
