@@ -2,12 +2,12 @@ network:
   version: 2
   renderer: networkd
   ethernets:
-    lo:
-      addresses:
-      - 172.16.100.11/32
     eth0:
       dhcp4: true
     eth1:
       dhcp4: false
       addresses:
-      - 10.0.4.1/24
+      - 10.0.1.11/24
+      routes:
+      - to: 1.0.0.0/8
+        via: 10.0.1.1
