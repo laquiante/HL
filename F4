@@ -5,7 +5,7 @@
 
 #clear
 echo "Netplan"
-sudo ansible-playbook -i /home/cumulus/HL/inventory/files/hosts /home/cumulus/HL/.netplan/hosts.yaml
+#sudo ansible-playbook -i /home/cumulus/HL/inventory/files/hosts /home/cumulus/HL/.netplan/hosts.yaml
 echo "start script: running additional configuration items" 
 if [ -f /home/cumulus/HL/.additional.conf ]; then
         . /home/cumulus/HL/.additional.conf
