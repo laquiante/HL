@@ -8,7 +8,7 @@ network:
       dhcp4: false
       dhcp6: false
       addresses:
-      - fd00:0000:0001::10/64
+      - fd00:0000:0007::10/64
       routes:
       - to: fd::/8
-        via: fd00:0000:0001::1
+        via: fd00:0000:0001::3
