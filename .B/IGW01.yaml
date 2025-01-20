@@ -8,7 +8,41 @@
       lo:
         ip:
           address:
-            172.16.100.1/32: {}
+            172.16.100.2/32: {}
+            fd99:0000:0000::1/128: {}
         type: loopback
+      swp1:
+        ip:
+          address:
+            fd00:0000:0001::1/64: {}
+      swp1,3:
+        type: swp
+      swp3:
+        ip:
+          address:
+            fd00:0000:0003::1/64: {}
+    router:
+      bgp:
+        autonomous-system: 4294967294
+        enable: on
+        router-id: 172.16.100.1
     system:
       hostname: IGW01
+    vrf:
+      default:
+        router:
+          bgp:
+            address-family:
+              ipv6-unicast:
+                enable: on
+                network:
+                  fd00:0000:0001::/64: {}
+                  fd99::1/128: {}
+            enable: on
+            neighbor:
+              swp3:
+                address-family:
+                  ipv6-unicast:
+                    enable: on
+                remote-as: external
+                type: unnumbered
