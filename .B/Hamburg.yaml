@@ -6,8 +6,9 @@ network:
       dhcp4: true
     eth1:
       dhcp4: false
+      dhcp6: false
       addresses:
-      - 10.0.1.11/24
+      - fd00:0000:0001::10/64
       routes:
-      - to: 1.0.0.0/8
-        via: 10.0.1.1
+      - to: fd::/8
+        via: fd00:0000:0001::1
