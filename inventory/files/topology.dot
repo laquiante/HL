@@ -1,6 +1,16 @@
-graph "ALQ" {
-"cumulus0":"swp1" -- "ubuntu0":"eth1"
-"cumulus0":"swp2" -- "cumulus1":"swp1"
-"cumulus1":"swp2" -- "cumulus2":"swp2"
-"cumulus2":"swp1" -- "ubuntu1":"eth1"
+graph "ALQ_MVP" {
+ "Hans" [function="host" os="generic/ubuntu2204" memory="1024" cpu="1" ]
+ "Hamburg" [function="host" os="generic/ubuntu2204" memory="1024" cpu="1" ]
+
+ "IGW01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="5.6.0" memory="2024" cpu="1" ]
+ "KGW01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="5.6.0" memory="2024" cpu="1" ]
+ "SVC01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="5.6.0" memory="2024" cpu="1" ]
+ "BGW01" [function="leaf" os="CumulusCommunity/cumulus-vx" version="5.6.0" memory="2024" cpu="1" ]
+
+ "Hans":"eth1" -- "IGW01":"swp1"
+ "IGW01":"swp3" -- "KGW01":"swp3"
+ "KGW01":"swp2" -- "SVC01":"swp1"
+ "KGW01":"swp4" -- "SVC01":"swp2"
+ "BGW01":"swp1" -- "KGW01":"swp1"
+ "Hamburg":"eth1" -- "BGW01":"swp2"
 }
