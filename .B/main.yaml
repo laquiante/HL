@@ -19,7 +19,7 @@
       shell: netplan apply
        
     - name: Check interface 1
-      shell: /sbin/ip -br -4 a | grep 'eth1'
+      shell: /sbin/ip -br -6 a | grep 'eth1'
       ignore_errors: yes
       register: result
     - debug: msg={{ result.stdout }}
