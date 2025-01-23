@@ -17,21 +17,25 @@
             fd00:0000:0006::1/64: {}
       swp1-2:
         ip:
-          vrf: Dienst-Internet
+          vrf: int-inter
         type: swp
       swp2:
         ip:
           address:
-            fd00:0000:0007::3/64: {}
+            fd00:0000:0007::2/64: {}
     router:
       bgp:
-        autonomous-system: 4294967292
+        autonomous-system: 4294967291
         enable: on
         router-id: 172.16.100.5
     system:
       hostname: BGW01
     vrf:
-      Dienst-Internet:
+      int-inter:
+        loopback:
+          ip:
+            address:
+              fd99::5/128: {}
         router:
           bgp:
             address-family:
