@@ -18,3 +18,11 @@
         user: cumulus
         state: present
         key: "{{ lookup('file', '/home/ubuntu/.ssh/id_rsa.pub') }}"
+
+    - name: name resulution   
+      ansible.builtin.copy:
+        src: /home/cumulus/HL/inventory/files/{{ inventory_hostname }}-Hosts
+        dest: /etc/hosts
+        owner: cumulus
+        group: admin
+        mode: u+rw
