@@ -9,7 +9,7 @@
         ip:
           address:
             172.16.100.2/32: {}
-            fd99:0000:0000::1/128: {}
+            fd99:0000:0000::2/128: {}
         type: loopback
       swp1:
         ip:
@@ -20,7 +20,7 @@
       swp3:
         ip:
           address:
-            fd00:0000:0003::1/64: {}
+            fd00:0000:0003::3/64: {}
     router:
       bgp:
         autonomous-system: 4294967294
