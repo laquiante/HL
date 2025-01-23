@@ -21,7 +21,7 @@
 
     - name: name resulution   
       ansible.builtin.copy:
-        src: /home/cumulus/HL/inventory/files/{{ inventory_hostname }}-Hosts
+        src: /home/cumulus/HL/inventory/files/Hosts
         dest: /etc/hosts
         owner: cumulus
         group: admin
