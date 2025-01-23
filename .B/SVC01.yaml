@@ -15,23 +15,23 @@
         ip:
           address:
             fd00:0000:0004::1/64: {}
-          vrf: extern
+          vrf: ext-internet
       swp1-2:
         type: swp
       swp2:
         ip:
           address:
             fd00:0000:0005::2/64: {}
-          vrf: intern
+          vrf: int-inter
     router:
       bgp:
-        autonomous-system: 4294967293
+        autonomous-system: 4294967292
         enable: on
         router-id: 172.16.100.4
     system:
       hostname: SVC01
     vrf:
-      extern:
+      ext-internet:
         loopback:
           ip:
             address:
@@ -47,7 +47,7 @@
                   from-vrf:
                     enable: on
                     list:
-                      intern: {}
+                      int-inter: {}
             enable: on
             neighbor:
               swp1:
@@ -58,7 +58,7 @@
                     enable: on
                 remote-as: external
                 type: unnumbered
-      intern:
+      int-inter:
         loopback:
           ip:
             address:
@@ -74,7 +74,7 @@
                   from-vrf:
                     enable: on
                     list:
-                      extern: {}
+                      ext-internet: {}
             enable: on
             neighbor:
               swp2:
