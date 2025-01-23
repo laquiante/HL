@@ -23,7 +23,7 @@
       swp2:
         ip:
           address:
-            fd00:0000:0003::12/64: {}
+            fd00:0000:0004::12/64: {}
       swp2-3:
         ip:
           vrf: ext-internet
