@@ -1,2 +1,6 @@
 PATH=$PATH:/home/cumulus/HL
-chmod +x /home/cumulus/HL/F0
+chmod +x /home/cumulus/HL/Service_Katalog.sh
+chmod +x /home/cumulus/HL/F1
+chmod +x /home/cumulus/HL/F2
+chmod +x /home/cumulus/HL/F3
+chmod +x /home/cumulus/HL/F4
