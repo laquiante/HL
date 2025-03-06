@@ -1,23 +1,50 @@
-# ALQ, Hamburg JAN 2025
+# ALQ, Hamburg MAR 2025
 
 # 192.168.200.1 oob-mgmt-server
 
+#Hans ansible_host=192.168.200.2
+#Hamburg ansible_host=192.168.200.3
+#IGW01 ansible_host=192.168.200.4
+#KGW01 ansible_host=192.168.200.5
+#SVC01 ansible_host=192.168.200.6
+#BGW01 ansible_host=192.168.200.7
+
+IGW01 ansible_host=192.168.200.7
+KGW01 ansible_host=192.168.200.8
+KGW11 ansible_host=192.168.200.9
+KGW02 ansible_host=192.168.200.10
+KGW12 ansible_host=192.168.200.11
+SVC01 ansible_host=192.168.200.12
+BGW01 ansible_host=192.168.200.13
+BGW02 ansible_host=192.168.200.14
+SEC01 ansible_host=192.168.200.15
 Hans ansible_host=192.168.200.2
 Hamburg ansible_host=192.168.200.3
-IGW01 ansible_host=192.168.200.4
-KGW01 ansible_host=192.168.200.5
-SVC01 ansible_host=192.168.200.6
-BGW01 ansible_host=192.168.200.7
+Bremen ansible_host=192.168.200.4
+Kiel ansible_host=192.168.200.5
+Wittduen ansible_host=192.168.200.6
 
 [host]
 Hans ansible_host=192.168.200.2
 Hamburg ansible_host=192.168.200.3
+Bremen ansible_host=192.168.200.4
+Kiel ansible_host=192.168.200.5
+Wittduen ansible_host=192.168.200.6
 
 [router]
-IGW01 ansible_host=192.168.200.4
-KGW01 ansible_host=192.168.200.5
-SVC01 ansible_host=192.168.200.6
-BGW01 ansible_host=192.168.200.7
+#IGW01 ansible_host=192.168.200.4
+#KGW01 ansible_host=192.168.200.5
+#SVC01 ansible_host=192.168.200.6
+#BGW01 ansible_host=192.168.200.7
+IGW01 ansible_host=192.168.200.7
+KGW01 ansible_host=192.168.200.8
+KGW11 ansible_host=192.168.200.9
+KGW02 ansible_host=192.168.200.10
+KGW12 ansible_host=192.168.200.11
+SVC01 ansible_host=192.168.200.12
+BGW01 ansible_host=192.168.200.13
+BGW02 ansible_host=192.168.200.14
+SEC01 ansible_host=192.168.200.15
 
 [all:vars]
 ansible_user=cumulus
